@@ -8,7 +8,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://mlmweb-ytcp.vercel.app'
+  ],
   credentials: true,
   allowedHeaders: ['Authorization', 'Content-Type']
 }));
@@ -57,6 +60,11 @@ app.use('/api/tickets', ticketsRoutes);
 app.use('/api/admin/auth', adminAuthRoutes);
 app.use('/api/admin/profile', adminProfileRoutes);
 app.use('/api/admin', adminRoutes);
+
+// Friendly root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the MLMWeb Backend API. Visit /api/test for a health check.');
+});
 
 // Debug route to test server is working
 app.get('/api/test', (req, res) => {

@@ -152,4 +152,16 @@ router.post('/reset-password/:token', async (req, res) => {
   }
 });
 
+// @route   GET /api/auth/signup
+// @desc    Friendly message for browser visits
+router.get('/signup', (req, res) => {
+  res.send('Signup endpoint: Please use POST to register.');
+});
+
+// @route   GET /api/auth/login
+// @desc    Friendly message for browser visits
+router.get('/login', (req, res) => {
+  res.send('Login endpoint: Please use POST to login.');
+});
+
 module.exports = router; 
