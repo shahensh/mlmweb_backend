@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db');
 const path = require('path');
-const server = require("socket.io");
+const {Server} = require("socket.io");
 const http = require('http');
 
 
@@ -25,6 +25,8 @@ const corsOptions = {
   },
   credentials: true
 };
+
+app.use(cors(corsOptions));
 
 const io = new Server(server, {
   cors: {
