@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 
 // Middleware
-const allowedOrigins = ['http://localhost:3000', 'https://mlmweb-ytcp.vercel.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://mlmweb-frontend-git-master-shaiks-projects-62d54542.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
